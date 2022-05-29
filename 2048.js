@@ -40,8 +40,11 @@ const createRandom = () => {
 
   if (emptyArrays.length === 0) {
     // If there is no more empty grid, the user lose the game
-    alert('Game over and your score is '+scoreSpan.innerText);
-    table.innerHTML = '';
+    if (parseInt(scoreSpan.innerText)>20000){
+    alert('Game over and your score is '+scoreSpan.innerText +' . You have mastered the game');}
+    else {
+      alert('Game over and your score is '+scoreSpan.innerText );
+    }table.innerHTML = '';
     reset();
     window.location='index.html'
   } else if (emptyArrays.length > 15) {
